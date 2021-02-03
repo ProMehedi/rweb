@@ -1,0 +1,98 @@
+:root {
+  --primary: #fff;
+}
+
+.btn {
+  padding: 8px 20px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn--primary {
+  background: var(--primary);
+  color: #242424;
+  border: 1px solid var(--primary);
+}
+
+.btn--outline {
+  background: transparent;
+  color: #fff;
+  padding: 8px 20px;
+  border: 1px solid var(--primary);
+  transition: all 0.3s ease-out;
+}
+
+.btn--medium {
+  padding: 8px 20px;
+  font-size: 18px;
+}
+
+.btn--large {
+  padding: 12px 26px;
+  font-size: 18px;
+}
+
+.btn--mobile {
+  text-align: center;
+  border-radius: 4px;
+  text-decoration: none;
+  padding: 13px 25px;
+  font-size: 18px;
+  background: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  transition: all 0.3s ease-out;
+}
+
+.btn--wide {
+  padding: 12px 65px;
+  font-size: 20px;
+}
+
+.btn--large:hover, .btn--medium:hover, .btn--mobile:hover {
+  transition: all 0.3s ease-out;
+  background: #fff;
+  color: #242424;
+}
+
+.btn--wide:hover {
+  color: #fff;
+  background: #f00946;
+  transition: all 0.3s ease-out;
+}
+
+.primary {
+  background: #224422;
+  color: #fff;
+  border: none
+}
+
+.primary:hover {
+  background: #fff;
+  color: #242424;
+}
+
+.blue {
+  background: #276afb;
+  color: #fff;
+  border: none
+}
+
+.red {
+  background: #f00946;
+  color: #fff;
+  border: none
+}
+
+.green {
+  background: #25ce4a;
+  color: #fff;
+  border: none
+}
+
+.green:hover {
+  background: #242424;
+}
