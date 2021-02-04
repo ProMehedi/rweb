@@ -1,21 +1,25 @@
+import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
+import PulseLoader from "react-spinners/PulseLoader";
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
-import Home from './pages/home/Home';
-import Products from './pages/products/Products';
-import Services from './pages/services/Services';
-import SignUp from './pages/signup/SignUp';
+const Home = React.lazy(() => import('./pages/home/Home'));
+const Products = React.lazy(() => import('./pages/products/Products'));
+const Services = React.lazy(() => import('./pages/services/Services'));
+const SignUp = React.lazy(() => import('./pages/signup/SignUp'));
 
 function App() {
   return (
     <Router>
       <Navbar/>
       <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/services" component={Services} />
-        <Route path="/products" component={Products} />
-        <Route path="/sign-up" component={SignUp} />
+        <Suspense fallback={<div className="lazyLoader"><PulseLoader color="#276AFB" size={20} /></div>}>
+          <Route path="/" exact render={() => <Home/>} />
+          <Route path="/services" render={() => <Services/>} />
+          <Route path="/products" render={() => <Products/>} />
+          <Route path="/sign-up" render={() => <SignUp/>} />
+        </Suspense>
       </Switch>
       <Footer/>
     </Router>
